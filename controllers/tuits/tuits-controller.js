@@ -6,7 +6,7 @@ const findTuits = (req, res) => { res.json(tuits); }
 const createTuit = (req, res) => {
     const newTuit = req.body;
     newTuit._id = (new Date()).getTime();
-    newTuit.image = "https://user-images.githubusercontent.com/47161226/200991896-be5dd2a5-4d51-429c-ab39-ef780e32ead1.jpeg";
+    newTuit.image = "https://user-images.githubusercontent.com/47161226/201179344-7656b170-2611-4400-a869-9fc1b6c8564f.png";
     newTuit.likes = 0;
     newTuit.dislikes = 0;
     newTuit.replies = 0;
