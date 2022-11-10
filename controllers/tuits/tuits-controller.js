@@ -8,12 +8,14 @@ const createTuit = (req, res) => {
     newTuit._id = (new Date()).getTime();
     newTuit.image = "https://user-images.githubusercontent.com/47161226/200991896-be5dd2a5-4d51-429c-ab39-ef780e32ead1.jpeg";
     newTuit.likes = 0;
+    newTuit.dislikes = 0;
     newTuit.replies = 0;
     newTuit.retuits = 0;
     newTuit.time = "1m";
     newTuit.userName = "NASA"; 
     newTuit.handle = "@nasa";
     newTuit.liked = false;
+    newTuit.disliked = false;
     tuits.push(newTuit);
     res.json(newTuit);
 }
