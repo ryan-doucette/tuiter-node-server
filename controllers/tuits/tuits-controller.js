@@ -15,8 +15,8 @@ const createTuit = async (req, res) => {
     newTuit.time = "1m";
     newTuit.userName = "NASA"; 
     newTuit.handle = "@nasa";
-    newTuit.liked = false;
-    newTuit.disliked = false;
+    newTuit.liked = "false";
+    newTuit.disliked = "false";
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
@@ -24,14 +24,14 @@ const createTuit = async (req, res) => {
 const deleteTuit = async (req, res) => {
     const tuitdIdToDelete = req.params.tid;
     const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
-    res.sendStatus(status); 
+    res.json(status); 
 }
 
 const updateTuit = async (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
     const updates = req.body;
     const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updates);
-    res.sendStatus(status);
+    res.json(status);
 } 
 
 export default (app) => {
